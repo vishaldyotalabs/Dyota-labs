@@ -137,7 +137,6 @@ html {
 .home {
   padding-top: 8rem;
   padding-bottom: 5rem;
-  margin-left: 110px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -146,20 +145,20 @@ html {
 }
 
 .home .image {
-  flex: 1 1 55rem;
+  flex: 1 1 30rem;
   
 }
 
 .home .image img {
-  width: 500px;
-  height: 500px;
+  max-width: 500px;
+  height: auto;
   margin-bottom: 100px;
   border-radius: 15px;
   
 }
 
 .home .content {
-  flex: 1 50rem;
+  flex: 1 40rem;
   justify-content: center;
   align-items: center;
 }
@@ -198,7 +197,7 @@ html {
 
 .footer .box-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 2rem;
 }
 
@@ -209,7 +208,7 @@ html {
 }
 
 .footer .box-container .box .email{
-  display: block;
+  display: flex;
   font-size: 1.5rem;
   color: #5e6b69;
   padding: 1rem 0;
@@ -217,7 +216,7 @@ html {
 }
 
 .footer .box-container .box .address{
-  display: block;
+  display: flex;
   font-size: 1.5rem;
   color: #5e6b69;
   padding: 1rem 0;
@@ -225,7 +224,7 @@ html {
 }
 
 .footer .box-container .box .likedin{
-  display: block;
+  display: flex;
   font-size: 1.5rem;
   color: #5e6b69;
   padding: 1rem 0;
@@ -252,3 +251,43 @@ html {
 }
 
 /* footer section ends */
+
+/* responsive for 375px */
+@media screen and (max-width: 500px) {
+  .home .image {
+    flex: 1 1 auto; /* Remove fixed width, allow image to adapt */
+  }
+
+  .home .image img {
+    max-width: 100%; /* Set max-width to 100% for full width on smaller screens */
+  }
+  .home .content {
+    flex: 1 1 100%; /* Make content full width on smaller screens */
+  }
+
+  .home .content h1 {
+    font-size: 40px; /* Adjust font size for better readability */
+  }
+
+  .home .content h3 {
+    font-size: 25px; /* Adjust font size for better readability */
+  }
+
+  .home .content p {
+    font-size: 1.5rem; /* Adjust font size for better readability */
+  }
+  .footer .box-container {
+    grid-template-columns: 1fr; /* Maintain single column for smaller screens */
+  }
+
+  .footer .box-container .box h3,
+  .footer .box-container .box .email,
+  .footer .box-container .box .address,
+  .footer .box-container .box .likedin {
+    padding: 0.5rem 0; /* Maintain reduced padding */
+  }
+
+  .footer .box-container .box a i {
+    padding-right: 0.2rem; /* Maintain reduced icon spacing */
+  }
+}
